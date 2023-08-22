@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://global-uploads.webflow.com/627cdcca8bc0d22df9b2672f/63bf97b58fd9fb2b03655aa5_Interview%20Questions%20to%20Middle%20School%20Teacher.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #e54626;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-title">Acceder como Administrador</div>
+        <form action="admin"> <!-- Cambia "pagina_destino.html" por la URL de la página a la que deseas redirigir -->
+            <input type="text" class="login-input" placeholder="Usuario">
+            <input type="password" class="login-input" placeholder="Contraseña">
+            <button type="submit" class="login-button">Ingresar</button>
+        </form>
+    </div>
+</body>
+</html>

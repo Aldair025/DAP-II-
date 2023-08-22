@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+    crossorigin="anonymous"
+  />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+
+  <title>Página principal</title>
+
+  <style>
+  body {
+  background-image: url("https://feyalegria.org.pe/wp-content/uploads/2020/07/FyA-39-1024x565.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fija la imagen en su posición */
+  }
+   .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.post {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.post h2 {
+    margin-top: 0;
+}
+
+.post img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.post p {
+    color: #444;
+}
+
+.read-more {
+    color: #007bff;
+    text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="py-3 border-bottom bg-dark">
+    <div class="container-fluid align-items-center d-flex">
+      <!-- Botón para desplazar el menú en la parte izquierda del encabezado -->
+      <button class="btn btn-dark btn-lg me-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+      <div class="flex-shrink-1">
+        <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+          <i class="bi bi-bootstrap fs-2 text-dark"></i>
+        </a>
+      </div>
+      <div class="container-fluid d-flex justify-content-center">
+      <!-- Logo en el centro del encabezado -->
+      <a href="Menu" class="d-flex align-items-center link-dark text-decoration-none">
+        <img src="https://seeklogo.com/images/F/Fe_y_Alegria-logo-BF8EDA2F0E-seeklogo.com.png" alt="Logo" width="45" height="45" class="me-2">
+        <h5 class="m-0">I.E Fe y Alegría</h5>
+      </a>
+    </div>
+
+      <div class="flex-grow-1 d-flex align-items-center">
+        <div class="w-100 me-3">
+          <!--<input type="search" class="form-control" placeholder="Search..." />-->
+        </div>
+        <div class="flex-shrink-0 dropdown">
+          <a
+            href="#"
+            class="d-block link-light text-decoration-none dropdown-toggle"
+            id="dropdownUser2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png"
+              alt="user"
+              width="32"
+              height="32"
+              class="rounded-circle"
+            />
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end shadow"
+            aria-labelledby="dropdownUser2"
+          >
+            <li><a class="dropdown-item" href="Miperfil">Perfil</a></li>
+            
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{/login}">Cerrar
+							sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
+    <div class="offcanvas-header">
+      <h6 class="offcanvas-title d-none d-sm-block">Home</h6>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+      <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+        <li class="nav-item">
+          <a href="Menu" class="nav-link text-truncate">
+            <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Menu</span>
+          </a>
+          </li>
+        <li class="nav-item">
+          <a href="cursos" class="nav-link text-truncate">
+            <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Cursos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="notas" class="nav-link text-truncate">
+            <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Notas</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="horario" class="nav-link text-truncate">
+            <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Horario</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+   <div class="container">
+    <div class="post">
+        <h2>167 AÑOS DE SERVICIO, ENTREGA, DEDICACIÓN Y FORMACIÓN</h2>
+        <img src="https://scontent.flim18-3.fna.fbcdn.net/v/t39.30808-6/366330362_882244766709209_3773371049215936126_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGjl4Gzws9wPuFoWTj1gXSsErAIt4ntuGASsAi3ie24YMMN9kiYbFk76Cy-6Xi6kVWsKvFEHFXfMd8cnpN3l5jf&_nc_ohc=Kf63Qq2g1HUAX-qf32L&_nc_ht=scontent.flim18-3.fna&oh=00_AfCmh-Lr0Hf8LUBnAplRGNQ8-tx5eLtdz-MiBPYdeOcCGA&oe=64E9F1B7" alt="Imagen de la publicación 1">
+        <p>“SI, SI, SI LA ANUNCIATA ES OBRA DE DIOS” Desde Villa Hermosa, Lima - Perú la Comunidad Educativa de Fe y Alegría N° 39, celebramos con alegría y gratitud los 167 años de fundación de la Congregación Hermanas Dominicas de la Anunciata.
+        San Francisco Coll, funda la Congregación para “Anunciar el mensaje de salvación a todos, especialmente a la niñez y juventud, a través de la educación”, evangelizando en todo tiempo y lugar.
+        Hoy todos nosotros, laicos y hermanas compartimos la vida y misión para hacer realidad el legado de San Francisco Coll.¡Feliz fiesta querida comunidad, porque todos somos Dominicas de la Anunciata.</p>
+        <a href="#" class="read-more">Leer más</a>
+    </div>
+   
+    <!-- Puedes agregar más publicaciones aquí -->
+</div>
+  <footer class="bg-dark border-top text-center text-white fixed-bottom">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2023 Copyright:
+          <a class="text-white" href="https://www.youtube.com/@feyalegrian39"
+            >FE Y ALEGRÍA</a
+          >
+        </div>
+        <!-- Copyright -->
+        
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
+          

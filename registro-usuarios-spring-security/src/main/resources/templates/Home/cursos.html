@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cursos</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+    crossorigin="anonymous"
+  />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+    <!-- ESTILOS -->
+  <style>
+      body {
+    background-image: url("https://feyalegria.org.pe/wp-content/uploads/2020/07/FyA-39-1024x565.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fija la imagen en su posición */
+  }
+  .carousel-inner {
+  border-radius: 10px; /* Ajusta el valor para cambiar el radio de curvatura */
+  overflow: hidden; /* Asegura que la imagen se ajuste correctamente al redondear las esquinas */
+}
+
+  /* Cambia el color de la letra en el carrusel */
+  .carousel-caption h3 {
+    color: black; /* Cambia el color del título (h3) a rojo */
+  }
+
+  .carousel-caption p {
+    color: black; /* Cambia el color del párrafo (p) a azul */
+  }
+    .course-card {
+      margin-bottom: 20px;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 300px;
+    }
+
+    .course-info {
+      display: none;
+    }
+
+    .course-info.active {
+      display: block;
+    }
+
+    .task-section {
+      margin-top: 20px;
+      background-color: #ffffff; /* Color de fondo blanco para el recuadro */
+      padding: 20px; /* Espaciado interno */
+      border-radius: 10px; /* Bordes redondeados */
+    }
+
+    .task-form {
+      margin-top: 10px;
+    }
+
+    /* Recuadro blanco para los bimestres */
+    .bimestre-section {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Header -->
+ <header class="py-3 border-bottom bg-dark">
+  <div class="container-fluid align-items-center d-flex">
+    <!-- Botón para desplazar el menú en la parte izquierda del encabezado -->
+    <button class="btn btn-dark btn-lg me-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+      <i class="bi bi-list fs-3"></i>
+    </button>
+    <div class="flex-shrink-1">
+      <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+        <i class="bi bi-bootstrap fs-2 text-dark"></i>
+      </a>
+    </div>
+    <div class="container-fluid d-flex justify-content-center">
+      <!-- Logo en el centro del encabezado -->
+      <a href="Menu" class="d-flex align-items-center link-dark text-decoration-none">
+        <img src="https://seeklogo.com/images/F/Fe_y_Alegria-logo-BF8EDA2F0E-seeklogo.com.png" alt="Logo" width="45" height="45" class="me-2">
+        <h5 class="m-0">I.E Fe y Alegría</h5>
+      </a>
+    </div>
+    <div class="flex-grow-1 d-flex align-items-center">
+      <div class="w-100 me-3">
+        <!--<input type="search" class="form-control" placeholder="Search..." />-->
+      </div>
+      <div class="flex-shrink-0 dropdown">
+      <a
+          href="#"
+          class="d-block link-light text-decoration-none dropdown-toggle"
+          id="dropdownUser2"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png"
+            alt="user"
+            width="32"
+            height="32"
+            class="rounded-circle"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end shadow"
+          aria-labelledby="dropdownUser2"
+        >
+        <li><a class="dropdown-item" href="Miperfil">Perfil</a></li>
+        
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
+  <div class="offcanvas-header">
+    <h6 class="offcanvas-title d-none d-sm-block">Home</h6>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body px-0">
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+      <li class="nav-item">
+        <a href="Menu" class="nav-link text-truncate">
+          <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Menu</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="cursos" class="nav-link text-truncate">
+          <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Cursos</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="notas" class="nav-link text-truncate">
+          <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Notas</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="horario" class="nav-link text-truncate">
+          <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Horario</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+  <div class="container">
+    <h1></h1>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://img.freepik.com/vector-gratis/fondo-ciencia-vintage_23-2148544912.jpg?w=2000" alt="Ciencia">
+          <div class="carousel-caption">
+            <h3>Ciencia</h3>
+            <p>En este curso, exploraremos los principios fundamentales de la ciencia, incluidos los conceptos de física, química y biología. Aprenderás sobre las leyes naturales que rigen el mundo que nos rodea y cómo se aplican en diversos campos de estudio.</p>
+
+          </div>
+          </div>
+        <div class="carousel-item">
+          <img src="https://png.pngtree.com/background/20210712/original/pngtree-cute-hand-drawn-style-math-education-blue-plaid-background-picture-image_1176978.jpg" alt="Matemática">
+          <div class="carousel-caption">
+            <h3>Matemática</h3>
+            <p>En este curso, nos sumergiremos en el fascinante mundo de las matemáticas. Desde la aritmética básica hasta el cálculo avanzado, abordaremos una amplia variedad de temas para desarrollar tus habilidades de resolución de problemas y razonamiento lógico.</p>
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://img.freepik.com/vector-gratis/iconos-redes-sociales_53876-89125.jpg?w=2000" alt="Comunicación">
+          <div class="carousel-caption">
+            <h3>Comunicación</h3>
+            <p>En este curso, aprenderás las habilidades esenciales de comunicación que te permitirán expresarte de manera efectiva tanto en el ámbito personal como profesional. Mejorarás tu capacidad de hablar en público, redactar textos persuasivos y escuchar de manera activa.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+  </div>
+   <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 course-info active" id="ciencia-info">
+        <div class="bimestre-section">
+          <h2>Curso de Ciencia</h2>
+          <h4>Bimestre 1</h4>
+          <p>Temas: Introducción a la física, conceptos básicos de química, fundamentos de biología.</p>
+        </div>
+        <div class="bimestre-section">
+          <h4>Bimestre 2</h4>
+          <p>Temas: Leyes de movimiento, estructura atómica, células y tejidos.</p>
+        </div>
+         <div class="bimestre-section">
+          <h4>Bimestre 3</h4>
+          <p>Temas: Energía y trabajo, reacciones químicas, sistemas orgánicos.</p>
+        </div>
+        <div class="bimestre-section">
+          <h4>Bimestre 4</h4>
+          <p>Temas: Electricidad y magnetismo, equilibrio químico, evolución y ecología.</p>
+        </div>
+        <div class="task-section mt-4">
+          <h4>Tareas asignadas</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Tarea</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de vencimiento</th>
+                <th>Entregar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tarea 1</td>
+                <td>2023-06-20</td>
+                <td>2023-06-25</td>
+                <td><button type="button" class="btn btn-primary task-form" data-toggle="modal" data-target="#taskModal">Entregar</button></td>
+              </tr>
+              <tr>
+                <td>Tarea 2</td>
+                <td>2023-07-01</td>
+                <td>2023-07-10</td>
+                <td><button type="button" class="btn btn-primary task-form" data-toggle="modal" data-target="#taskModal">Entregar</button></td>
+              </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6 course-info" id="matematica-info">
+        <div class="bimestre-section">
+          <h2>Curso de Matemática</h2>
+          <h4>Bimestre 1</h4>
+          <p>Temas: Números y operaciones básicas, álgebra elemental.</p>
+        </div>
+        <div class="bimestre-section">
+          <h4>Bimestre 2</h4>
+          <p>Temas: Geometría y trigonometría, ecuaciones e inecuaciones.</p>
+        </div>
+        <div class="bimestre-section">
+          <h4>Bimestre 3</h4>
+          <p>Temas: Cálculo diferencial, funciones y gráficas.</p>
+        </div>
+        <div class="bimestre-section">
+          <h4>Bimestre 4</h4>
+          <p>Temas: Cálculo integral, estadística y probabilidad.</p>
+        </div>
+        <div class="task-section mt-4">
+          <h4>Tareas asignadas</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Tarea</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de vencimiento</th>
+                <th>Entregar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tarea 1</td>
+                <td>2023-06-20</td>
+                <td>2023-06-25</td>
+                <td><button type="button" class="btn btn-primary task-form" data-toggle="modal" data-target="#taskModal">Entregar</button></td>
+              </tr>
+              <tr>
+                <td>Tarea 2</td>
+                <td>2023-07-01</td>
+                <td>2023-07-10</td>
+                <td><button type="button" class="btn btn-primary task-form" data-toggle="modal" data-target="#taskModal">Entregar</button></td>
+              </tr>
+              </table>
+        </div>
+      </div>
+      <div class="col-md-6 course-info" id="comunicacion-info">
+        <div class="bimestre-section">
+          <h2>Curso de Comunicación</h2>
+          <h4>Bimestre 1</h4>
+          <p>Temas: Habilidades de escucha activa, técnicas de redacción.</p>
+        </div>
+        <div class="bimestre-section">
+          <h4>Bimestre 2</h4>
+          <p>Temas: Hablar en público y presentaciones efectivas.</p>
+        </div>
+        <div class="bimestre-section">
+          <h4>Bimestre 3</h4>
+          <p>Temas: Comunicación en grupos y equipos, comunicación intercultural.</p>
+        </div>
+        <div class="bimestre-section">
+          <h4>Bimestre 4</h4>
+          <p>Temas: Comunicación digital, negociación y resolución de conflictos.</p>
+        </div>
+        <div class="task-section mt-4">
+          <h4>Tareas asignadas</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Tarea</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de vencimiento</th>
+                <th>Entregar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tarea 1</td>
+                <td>2023-06-20</td>
+                <td>2023-06-25</td>
+                <td><button type="button" class="btn btn-primary task-form" data-toggle="modal" data-target="#taskModal">Entregar</button></td>
+              </tr>
+              <tr>
+                <td>Tarea 2</td>
+                <td>2023-07-01</td>
+                <td>2023-07-10</td>
+                <td><button type="button" class="btn btn-primary task-form" data-toggle="modal" data-target="#taskModal">Entregar</button></td>
+              </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="taskModalLabel">Entregar tarea</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="taskName">Nombre de la tarea</label>
+              <input type="text" class="form-control" id="taskName" required>
+            </div>
+           <div class="form-group">
+            <label for="fileUpload">Subir archivo</label>
+            <input type="file" class="form-control-file" id="fileUpload" accept=".pdf,.doc,.docx" required>
+            <small class="form-text text-muted">Aceptamos archivos PDF y documentos de Word.</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Entregar tarea</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark border-top text-center text-white fixed-bottom">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2023 Copyright:
+      <a class="text-white" href="https://www.idat.edu.pe/"
+        >FE Y ALEGRÍA</a
+      >
+    </div>
+    <!-- Copyright -->
+  </footer>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#myCarousel").on("slide.bs.carousel", function(event) {
+        $(".course-info").removeClass("active");
+        var course = $(event.relatedTarget).index();
+        $("#ciencia-info, #matematica-info, #comunicacion-info").eq(course).addClass("active");
+      });
+    });
+  </script>
+</body>
+</html>
+    
+    
